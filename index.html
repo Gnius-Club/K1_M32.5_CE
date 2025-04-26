@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook - Misión 32.5</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            background-color: #5DADE2; /* Azul Gnius */
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+        .banner {
+            background-color: #85C1E9; /* Azul más claro */
+            color: #333;
+            padding: 15px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .banner:hover {
+            background-color: #AED6F1;
+        }
+        .banner .title {
+            font-size: 1.3em;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .banner .subtitle {
+            font-size: 1em;
+            margin-top: 8px;
+            border-top: 1px solid #fff;
+            padding-top: 8px;
+            color: #1A5276; /* Azul oscuro texto */
+        }
+        .content {
+            display: none;
+            padding: 15px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            background-color: #EAF2F8; /* Azul muy claro fondo */
+            border-radius: 5px;
+        }
+        .dialogue {
+            background-color: #FEF9E7; /* Amarillo pálido para diálogo */
+            border: 1px solid #FAD7A0;
+            border-radius: 10px;
+            padding: 10px 15px;
+            margin: 15px 0;
+            text-align: left; /* Cambiado a izquierda para mejor lectura */
+            font-style: italic;
+            color: #784212; /* Marrón oscuro texto */
+            position: relative; /* Para el bocadillo */
+            border-left: 5px solid #F39C12; /* Naranja */
+        }
+
+        .dropdown {
+            margin-bottom: 25px;
+            text-align: center; /* Centrar dropdown */
+        }
+        .dropdown label {
+            font-weight: bold;
+            color: #1A5276;
+        }
+        .dropdown select {
+            font-size: 1.1em;
+            padding: 8px 12px;
+            margin-left: 10px;
+            border-radius: 5px;
+            border: 1px solid #85C1E9;
+        }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px;}
+        td { padding: 12px; border: 1px solid #AED6F1; vertical-align: top; }
+        td strong { color: #1A5276; }
+        .level-title { /* Clase específica para el título del nivel */
+             text-align: center;
+             color: #5DADE2;
+             font-size: 1.4em;
+             margin-bottom: 20px;
+        }
+        /* Clases para ocultar/mostrar contenido por nivel */
+        .k1-content, .k2-content, .k3-content { display: none; }
+         .activity.active .banner {
+             background-color: #AED6F1; /* Slightly different color when active */
+         }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Playbook - Misión 32.5: ¡El Eco Mágico de la Cueva Secreta!</h1>
+        </div>
+
+        <div class="dropdown">
+            <label for="class-level">Nivel:</label>
+            <select id="class-level" onchange="updateContent()">
+                <option value="K1">K1 (3 años)</option>
+                <option value="K2">K2 (4 años)</option>
+                <option value="K3">K3 (5 años)</option>
+            </select>
+        </div>
+
+        <h2 id="selected-level" class="level-title">Nivel: K1 (3 años)</h2>
+
+        <!-- ............................................Aquí empezarán las actividades........................................... -->
+
+<!-- Actividad 0: Revisión de Materiales -->
+<div id="activity-0" class="activity">
+    <div class="banner" onclick="toggleContent('revision_materiales')">
+        <div class="title">📚 Actividad 0: Revisión de Materiales</div>
+        <div class="subtitle">Objetivo: Asegurarse de que todos los materiales necesarios para la clase estén disponibles y preparados antes de que lleguen los niños.</div>
+    </div>
+    <div id="revision_materiales" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (N/A):</strong> Revisa que tengas listos los materiales indicados en la **DIAPOSITIVA 1**: 1 Set LEGO Coding Express (tren, vías rectas, vías curvas, ladrillos de acción amarillo, azul, rojo) y 10 iBricks (para decorar la "cueva") por cada pareja.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> N/A</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 1: Bienvenida e Introducción -->
+<div id="activity-1" class="activity">
+    <div class="banner" onclick="toggleContent('bienvenida')">
+        <div class="title">🎉 Actividad 1: ¡Ecos y Repeticiones! ⏰ Tiempo: 1 minuto</div>
+        <div class="subtitle">Objetivo: Introducir el concepto de patrones y repeticiones a través de la idea del eco.</div>
+    </div>
+    <div id="bienvenida" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (0.5 minutos):</strong> Reproduce la **DIAPOSITIVA 2** “Bienvenida”. Saluda al CODE SQUAD preguntando si saben qué es un eco.</td>
+                <td>
+                    <div class="dialogue">
+                        "¡Hola, exploradores del CODE SQUAD! ¿Alguna vez han gritado en una montaña o en un lugar muy grande y han escuchado su propia voz repetirse? ¡Eso es un ECO! ¡Eco, eco, eco! ¡Hoy vamos a explorar una cueva mágica donde no solo las voces, sino también las acciones, ¡hacen eco!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (0.5 minutos):</strong> Reproduce la **DIAPOSITIVA 3** "Gimnasio CODE SQUAD". Explica que para entender los ecos (patrones) se necesita observar y predecir qué viene después.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Para entender los ecos y las repeticiones, necesitamos súper oídos y súper ojos de detective! ¡Hay que estar atentos para descubrir qué se repite y qué viene después! ¡Es como descifrar un código secreto! ¡Vamos al Gimnasio Cerebral a entrenar nuestra habilidad para encontrar PATRONES!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 2: Baile de Algoritmos -->
+<div id="activity-2" class="activity">
+    <div class="banner" onclick="toggleContent('baile-algoritmos')">
+        <div class="title">🎶 Actividad 2: Baile de Algoritmos ⏰ Tiempo: 2 minutos</div>
+        <div class="subtitle">Objetivo: Reforzar la atención a la secuencia y la memoria de pasos.</div>
+    </div>
+    <div id="baile-algoritmos" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 4** “Baile de Algoritmos”. Guía el baile, quizás repitiendo una pequeña secuencia varias veces como un "eco" en el baile.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Este baile tiene un eco secreto! ¡Fíjense si hay pasos que se repiten! ¡Salto, giro... salto, giro! ¡Es un patrón! ¡Sigan la música y encuentren el eco en el baile! ¡Así practicamos para encontrar los patrones de la cueva mágica!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 3: Planteamiento del Problema - El Eco del Tren en la Cueva -->
+<div id="activity-3" class="activity">
+    <div class="banner" onclick="toggleContent('planteamiento-problema')">
+        <div class="title">🔊 Actividad 3: ¡La Cueva del Eco Mágico! ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Objetivo: Presentar la historia de la cueva, el concepto de patrón A-B como el "eco" y el reto de completarlo.</div>
+    </div>
+    <div id="planteamiento-problema" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (1.5 minutos):</strong> Reproduce la **DIAPOSITIVA 5**. Narra la historia del Coding Express entrando en la Cueva del Eco Mágico.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡CODE SQUAD! ¡Nuestro valiente Coding Express ha descubierto la entrada a la legendaria Cueva del Eco Mágico! ¡Dicen que dentro de esta cueva, todo lo que haces se repite, como un eco! ¡Si tocas la bocina, suena dos veces! ¡Si enciendes la luz, parpadea! ¡Es un lugar lleno de misterios y... ¡PATRONES!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1.5 minutos):</strong> Reproduce la **DIAPOSITIVA 6**. Explica el reto: El eco de la cueva sigue un patrón (ej. acción A, acción B, acción A, acción B...). Hay un patrón incompleto en la vía y deben descubrir qué acción/ladrillo falta para completar el eco.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡El Coding Express avanzó un poco en la cueva y notó algo increíble! ¡Las acciones que hace se repiten en un orden especial, como el código secreto del eco! Por ejemplo, quizás hace ¡Sonido (A), luego Reversa (B), luego Sonido (A) otra vez! ¡Es un patrón A-B! Pero... ¡oh, no! ¡Parte del camino del eco está incompleto! ¡Falta un ladrillo de acción! Nuestro reto, detectives, es: ¡Observar el patrón del eco que ya está, descubrir qué acción falta al final y colocar el ladrillo correcto para completar el eco mágico!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 4: Formación de Parejas -->
+<div id="activity-4" class="activity">
+    <div class="banner" onclick="toggleContent('formacion-parejas')">
+        <div class="title">🤝 Actividad 4: ¡Detectives de Ecos en Equipo! ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Objetivo: Formar parejas para analizar el patrón y completar la secuencia juntos.</div>
+    </div>
+    <div id="formacion-parejas" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 7** “Formación de Equipos”. Explica que descifrar patrones es más fácil con dos pares de ojos de detective. Forma las parejas.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Para encontrar patrones escondidos como los del eco, necesitamos a los mejores Detectives de Ecos! ¡Y dos detectives trabajando juntos son imparables! ¡Pueden ayudarse a mirar bien, a recordar el orden y a descubrir qué falta! ¡Formen sus Equipos de Detectives de Ecos!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1 minuto):</strong> Verifica que todos tengan pareja. Anímales a preparar su "equipo de exploración" (tren, vías, ladrillos, bloques para decorar la cueva).</td>
+                <td>
+                     <div class="dialogue">
+                        "¿Listos, Detectives? ¡Preparen su lupa imaginaria y su equipo de exploración! Necesitarán vías para entrar en la cueva, los ladrillos de acción para ver el eco, bloques para decorar la entrada de la cueva, ¡y por supuesto, nuestro Coding Express! ¡La cueva espera!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 5: Reto de Codificación - ¡Descubre y Completa el Eco! -->
+<div id="activity-5" class="activity">
+    <div class="banner" onclick="toggleContent('reto-codificacion')">
+        <div class="title">🔍 Actividad 5: ¡Encuentra el Patrón Perdido! ⏰ Tiempo: 7 minutos</div>
+        <div class="subtitle">Objetivo: Observar la secuencia de ladrillos de acción incompleta, identificar el patrón (A-B o A-B-C) y colocar el ladrillo que falta para completarlo.</div>
+    </div>
+    <div id="reto-codificacion" class="content">
+        <table>
+             <!-- Paso Común: Construir la Cueva y Presentar Patrón Incompleto -->
+             <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 8** "¡Entrada a la Cueva y Eco Incompleto!". Guía para construir la entrada de la "cueva" con iBricks y la vía inicial con el patrón incompleto (según nivel).</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Detectives! ¡Usen sus bloques gigantes para construir la entrada misteriosa de la Cueva del Eco! Ahora, miren la vía que he preparado (o que prepararemos juntos). ¡Tiene un eco mágico, pero... le falta el último sonido/acción! ¡Observen con atención los ladrillos que YA están!"
+                    </div>
+                </td>
+            </tr>
+            <!-- Contenido Específico por Nivel -->
+             <!-- K1 -->
+            <tr class="k1-content">
+                <td><strong>PASO 2 - K1 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 9** "Patrón K1: Sonido-Reversa... ¿Qué Sigue?". Mostrar vía con Amarillo - Azul - ? Pide que identifiquen el patrón (A-B) y coloquen el ladrillo que falta (Amarillo).</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Equipo K1! Miren el eco: Primero Amarillo (sonido), luego Azul (reversa)... ¿Qué creen que se repite después? ¿Cuál fue el primero? (Espera respuesta: ¡Amarillo!). ¡Exacto! El eco hace Sonido-Reversa, Sonido-Reversa... ¡Falta el siguiente Sonido! ¡Tomen el ladrillo AMARILLO y pónganlo al final para completar el eco!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K2 -->
+             <tr class="k2-content">
+                 <td><strong>PASO 2 - K2 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 10** "Patrón K2: Sonido-Luz-Sonido... ¿Qué Sigue?". Mostrar vía con curva: Amarillo - Blanco - Amarillo - ? Pide que identifiquen el patrón (A-B-A) y coloquen el ladrillo que falta (Blanco).</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Detectives K2! Su eco es un poco más largo y tiene curva: Amarillo (sonido), luego Blanco (luz), luego Amarillo (sonido) otra vez... ¿Qué patrón es? ¡Sonido-Luz-Sonido-Luz! ¡A-B-A-B! ¿Qué ladrillo falta al final para seguir el eco? (Espera respuesta: ¡Blanco/Luz!). ¡Correcto! ¡Tomen el ladrillo BLANCO y colóquenlo al final para que el eco continúe!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K3 -->
+             <tr class="k3-content">
+                 <td><strong>PASO 2 - K3 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 11** "Patrón K3: Sonido-Reversa-Alto...Sonido-Reversa...¿Qué Sigue?". Mostrar vía con curva: Amarillo - Azul - Rojo - Amarillo - Azul - ? Pide que identifiquen patrón (A-B-C) y coloquen el ladrillo que falta (Rojo).</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Maestros Detectives K3! ¡Este eco es un código secreto completo! Miren: Amarillo (sonido), Azul (reversa), Rojo (alto)... ¡Y luego empieza de nuevo! Amarillo (sonido), Azul (reversa)... ¿Cuál es el siguiente paso en este patrón A-B-C? (Espera respuesta: ¡Rojo/Alto!). ¡Exactamente! ¡El eco repite Sonido-Reversa-Alto! ¡Tomen el ladrillo ROJO y colóquenlo al final para completar la secuencia del eco!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 6: ¡Escuchando el Eco Completo! -->
+<div id="activity-6" class="activity">
+    <div class="banner" onclick="toggleContent('probando-eco')">
+        <div class="title">🔊 Actividad 6: ¡Probando el Eco Mágico! ⏰ Tiempo: 7 minutos</div>
+        <div class="subtitle">Objetivo: Ejecutar la secuencia completa (con el ladrillo añadido) y verificar que el patrón A-B (o A-B-C) se cumple correctamente.</div>
+    </div>
+    <div id="probando-eco" class="content">
+        <table>
+             <!-- K1 -->
+            <tr class="k1-content">
+                <td><strong>PASO 1 - K1 (7 minutos):</strong> Reproduce la **DIAPOSITIVA 12** "¡Eco K1 Completo!". Guía para probar el tren en la vía completada (Amarillo-Azul-Amarillo). Observar si hace Sonido-Reversa-Sonido. Celebrar.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Equipo K1! ¡Han completado el eco! Pongan el Coding Express al inicio de la cueva. ¡Empujón! Escuchen y miren: ¿Hizo Sonido (amarillo)? ¿Luego Reversa (azul)? ¿Y luego Sonido otra vez (amarillo)? ¡SÍ! ¡El eco está completo! ¡Pip-Pip... Vrrr... Pip-Pip! ¡Lo lograron!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K2 -->
+             <tr class="k2-content">
+                 <td><strong>PASO 1 - K2 (7 minutos):</strong> Reproduce la **DIAPOSITIVA 13** "¡Eco K2 Revelado!". Guía para probar el tren en la vía completada (Amarillo-Blanco-Amarillo-Blanco). Observar si hace Sonido-Luz-Sonido-Luz. Comentar el patrón A-B-A-B.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Detectives K2! ¡A probar el eco que arreglaron! Tren al inicio... ¡empujón! Observen: ¿Sonido (amarillo)? ¿Luz (blanco)? ¿Sonido otra vez (amarillo)? ¿Luz otra vez (blanco)? ¡Pip-Pip... Flash... Pip-Pip... Flash! ¡El patrón A-B-A-B está perfecto! ¡Descifraron el código del eco!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K3 -->
+             <tr class="k3-content">
+                 <td><strong>PASO 1 - K3 (7 minutos):</strong> Reproduce la **DIAPOSITIVA 14** "¡Eco K3 Descifrado!". Guía para probar el tren en la vía completada (Amarillo-Azul-Rojo-Amarillo-Azul-Rojo). Observar la secuencia A-B-C repetida. Felicitar por resolver el patrón complejo.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Maestros K3! ¡El momento de la verdad! ¿Funcionará el eco A-B-C completo? ¡Tren al inicio! ¡Empujón! Atentos: ¿Sonido (A)? ¿Reversa (B)? ¿Alto (C)? ¿Y luego Sonido (A)? ¿Reversa (B)? ¿Alto (C)? ¡Pip-Pip... Vrrr... Stop! ¡Pip-Pip... Vrrr... Stop! ¡LO HICIERON! ¡El eco mágico A-B-C funciona gracias a ustedes! ¡Increíble!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 7 OMITIDA -->
+
+<!-- Actividad 8: Conclusión y Reflexión -->
+<div id="activity-8" class="activity">
+    <div class="banner" onclick="toggleContent('conclusion-reflexion')">
+        <div class="title">🏁 Actividad 8: ¡Misterio del Eco Resuelto! ⏰ Tiempo: 5 minutos</div>
+        <div class="subtitle">Objetivo: Celebrar el éxito en la identificación y compleción de patrones, reforzar el concepto de patrón A-B / A-B-C y la secuenciación.</div>
+    </div>
+    <div id="conclusion-reflexion" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 15** "¡Misión Cumplida!". Reúne al grupo, felicita por ser grandes Detectives de Ecos. Realiza preguntas de reflexión sobre los patrones.</td>
+                <td>
+                    <div class="dialogue">
+                        "¡MISIÓN CUMPLIDA, súper detectives del CODE SQUAD! ¡Han resuelto el misterio del Eco Mágico! ¡Encontraron el patrón secreto y lo completaron! ¡Ahora la cueva suena y brilla como debe ser! Pensemos en cómo lo logramos:
+1. ¿Qué tuvimos que hacer primero para saber qué ladrillo faltaba? (¡Observar el patrón que ya estaba!)
+2. ¿Cómo supimos cuál era el ladrillo correcto? (¡Vimos qué se repetía y qué seguía en el orden!)
+3. ¿Encontramos patrones como A-B-A-B o A-B-C-A-B-C? (¡Sí!) ¿Dónde más vemos patrones que se repiten? (¡En canciones, en dibujos, en la ropa!)
+¡Hoy aprendimos a ser detectives de patrones! ¡Descubrimos que observar con atención nos ayuda a saber qué viene después! ¡Son geniales encontrando secuencias! ¡Hasta la próxima misión misteriosa!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+        <!-- ............................................Aquí terminarán las actividades........................................... -->
+
+    </div>
+
+<script>
+    function toggleContent(id) {
+        var content = document.getElementById(id);
+        var parentActivity = content.closest('.activity'); // Encuentra el contenedor de la actividad
+        if (content.style.display === "block") {
+            content.style.display = "none";
+            parentActivity.classList.remove('active'); // Remueve clase activa si se cierra
+        } else {
+             // Opcional: Cierra otros contenidos abiertos antes de abrir uno nuevo
+             // closeAllContents();
+            content.style.display = "block";
+            parentActivity.classList.add('active'); // Añade clase activa si se abre
+        }
+    }
+
+    // Función opcional para cerrar todos los demás contenidos al abrir uno
+    /*
+    function closeAllContents() {
+        var allContents = document.querySelectorAll('.content');
+        var allActivities = document.querySelectorAll('.activity');
+        allContents.forEach(function(content) {
+            content.style.display = 'none';
+        });
+         allActivities.forEach(function(activity) {
+             activity.classList.remove('active');
+         });
+    }
+    */
+
+    function updateContent() {
+        var level = document.getElementById("class-level").value;
+        // Actualiza el texto del título H2
+        var levelText = document.getElementById("class-level").options[document.getElementById("class-level").selectedIndex].text;
+        document.getElementById("selected-level").innerText = "Nivel: " + levelText;
+
+        // Oculta todas las filas de contenido específico de nivel primero
+        var k1Contents = document.querySelectorAll('.k1-content');
+        var k2Contents = document.querySelectorAll('.k2-content');
+        var k3Contents = document.querySelectorAll('.k3-content');
+
+        k1Contents.forEach(function(el) { el.style.display = 'none'; });
+        k2Contents.forEach(function(el) { el.style.display = 'none'; });
+        k3Contents.forEach(function(el) { el.style.display = 'none'; });
+
+        // Muestra solo las filas del nivel seleccionado
+        // Usamos 'table-row' porque estamos mostrando/ocultando filas de tabla (<tr>)
+        var selectedContents = document.querySelectorAll('.' + level.toLowerCase() + '-content');
+        selectedContents.forEach(function(el) {
+             // Importante: Necesitamos asegurarnos de que el display sea correcto para filas de tabla
+             if (el.tagName === 'TR') {
+                 el.style.display = 'table-row';
+             } else {
+                 // Si por alguna razón hay otros elementos, usar 'block' o ajustar según sea necesario
+                 el.style.display = 'block';
+             }
+        });
+    }
+
+    // Asegura que updateContent se ejecute cuando la página cargue
+    document.addEventListener('DOMContentLoaded', function() {
+        updateContent();
+    });
+</script>
+
+</body>
+</html>
